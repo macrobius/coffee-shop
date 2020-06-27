@@ -7,7 +7,7 @@ import BlogPost from './BlogPost';
 export default function BlogList() {
   const data = useStaticQuery(graphql`
     {
-      allMarkdownRemark {
+      allMarkdownRemark(sort: { fields: frontmatter___date, order: DESC }) {
         edges {
           node {
             id
@@ -29,7 +29,8 @@ export default function BlogList() {
           key={edge.node.id}
           title={edge.node.frontmatter.title}
           date={edge.node.frontmatter.date}
-          excerpt={edge.node.excerpt} />
+          excerpt={edge.node.excerpt}
+        />
       ))}
     </div>
   );
