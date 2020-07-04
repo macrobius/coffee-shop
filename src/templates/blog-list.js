@@ -8,11 +8,6 @@ import Layout from '../components/Layout';
 import styles from './blog-list.module.css';
 
 export default function BlogListTemplate({ data, pageContext }) {
-  // Calculate the page state so we know if we're on the
-  // first or last page.
-  const isFirstPage = pageContext.currentPage === 1;
-  const isLastPage = pageContext.currentPage === pageContext.numPages;
-
   // Generate the previous and next page URLs.
   const previousPage = pageContext.currentPage === 2 ?
     '/blog' :
@@ -36,13 +31,13 @@ export default function BlogListTemplate({ data, pageContext }) {
       </main>
 
       <div id={styles.pageLinks}>
-        {!isFirstPage && (
+        {pageContext.currentPage > 1 && (
           <Link to={previousPage}>
             &lt;&lt; Previous Page
           </Link>
         )}
 
-        {!isLastPage && (
+        {pageContext.currentPage < pageContext.pageCount && (
           <Link to={nextPage}>
             Next Page &gt;&gt;
           </Link>

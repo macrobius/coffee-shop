@@ -42,24 +42,31 @@ exports.createPages = async function({ graphql, actions }) {
       createPage({
         path: node.fields.slug,
         component: path
-          .resolve('./src/templates/blog.js'),
+          .resolve('src/templates/blog.js'),
         context: {
           slug: node.fields.slug
         }
       });
     });
 
-    const postsPerPage = 5;
-    const numPages = Math.ceil(posts.length / postsPerPage);
+    const pageSize = 5;
+    const pageCount = Math.ceil(posts.length / pageSize);
 
-    for (let i = 0; i < numPages; i++) {
+    const templatePath = path.resolve('src/templates/blog-list.js');
+
+    for (let i = 0; i < pageCount; i++) {
+      let path = '/blog';
+      if (i > 0) {
+        path += `/${i + 1}`;
+      };
+      
       createPage({
-        path: i === 0 ? '/blog' : `/blog/${i + 1}`,
-        component: path.resolve('./src/templates/blog-list.js'),
+        path,
+        component: templatePath,
         context: {
-          limit: postsPerPage,
-          skip: i * postsPerPage,
-          numPages,
+          limit: pageSize,
+          skip: i * pageSize,
+          pageCount,
           currentPage: i + 1
         }
       });
