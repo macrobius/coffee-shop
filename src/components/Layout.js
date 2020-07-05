@@ -11,6 +11,7 @@ export default function Layout({ children }) {
         <div id={styles.inner}>
           <h1><Link to="/">Joe's Coffee Shop</Link></h1>
           <Link to="/blog">Blog</Link>
+          <Link to="/menu">Menu</Link>
         </div>
       </header>
       <main id={styles.main}>
