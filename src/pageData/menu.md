@@ -15,4 +15,15 @@ categories:
       - name: Iced Mocha
         description: Espresso and mocha sauce, milk and ice, with whipped cream.
         price: $3.49
+  - name: Hot Drinks
+    items:
+      - name: Coffee
+        description: Fresh brewed Colombian coffee.
+        price: $1.99
+      - name: Cappuccino
+        description: Espresso with frothed milk.
+        price: $2.49
+      - name: Hot Cocoa
+        description: Steamed milk with chocolate syrup.
+        price: $1.49
 ---
