@@ -1,6 +1,6 @@
 ---
-title: Coffee and Bakery Menu
 contentKey: menu
+title: Coffee and Bakery Menu
 categories:
   - name: Iced Drinks
     items:
@@ -27,4 +27,9 @@ categories:
       - name: Hot Cocoa
         description: Steamed milk with chocolate syrup.
         price: $1.49
+  - name: Bakery
+    items:
+      - name: Blueberry Muffin
+        description: Made with farm fresh blueberries.
+        price: $3.99
 ---
