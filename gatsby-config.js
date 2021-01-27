@@ -1,4 +1,5 @@
 module.exports = {
+	pathPrefix: `/coffee/public`,
   siteMetadata: {
     title: 'The Coffee Blog'
   },

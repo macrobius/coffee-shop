@@ -24,7 +24,7 @@ export default function Layout({ children }) {
         id={styles.header}
         fluid={data.file.childImageSharp.fluid}>
         <div id={styles.inner}>
-          <h1><Link to="/">Joe's Coffee Shop</Link></h1>
+          <h1><Link to="/">Macro's Coffee Shop</Link></h1>
           <Link to="/blog">Blog</Link>
           <Link to="/menu">Menu</Link>
         </div>
